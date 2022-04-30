@@ -39,6 +39,15 @@ export class BlogController {
     return this.blogService.getBlogs(searchBlogDto, user);
   }
 
+  @Get()
+  getFilterBlogs(
+    @GetUser() user: UserEntity,
+    @Query() searchBlogDto: SearchBlogDTO,
+  ) {
+    console.log(searchBlogDto);
+    return this.blogService.getFilterBlogs(searchBlogDto, user);
+  }
+
   @Put('/:id')
   updateBlog(
     @GetUser() user: UserEntity,

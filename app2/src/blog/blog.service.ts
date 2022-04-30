@@ -19,6 +19,10 @@ export class BlogService {
     return this.blogRepository.getBlogs(searchBlogDto, user);
   }
 
+  async getFilterBlogs(searchBlogDto: SearchBlogDTO, user: UserEntity) {
+    return this.blogRepository.getFilterBlogs(searchBlogDto, user);
+  }
+
   //create a new blog
   async createBlog(createBlogDto: CreateBlogDTO, user: UserEntity) {
     //get a new row created for the blog
